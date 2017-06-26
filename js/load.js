@@ -46,11 +46,10 @@ includeHTML = function() {
 	return new Promise(function(resolve, reject) {
 		console.log("includeHTML");
 		var promises = [];
-		var includes = document.getElementsByTagName("embed");
+		var includes = document.getElementsByTagName("div");
 		for (var i = 0; i < includes.length; i++) {
 			var file = includes[i].getAttribute("src");
-			var ext = file.split('.').pop().toLowerCase();
-			if (file && ext == "html") {
+			if (file) {
 				promises.push(request({
 					method: "GET",
 					url: file,
