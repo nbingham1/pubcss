@@ -79,6 +79,18 @@ includeHTML = function() {
 //window.scrollTo(0, 0);
 };
 
+formatSection = function(section, id, type) {
+	console.log("formatSection");
+	console.log(section);
+	console.log(id);
+	console.log(type);
+	elems = section.getElementsByTagName(type);
+	for (var i = 0; i < elems.length; i++) {
+		elems[i].setAttribute("ref-num", id + "." + (i+1));
+		formatSection(elems[i], id + "." + (i+1), "sub" + type);
+	}
+}
+
 formatAnchors = function() {
 	return new Promise(function(resolve, reject) {
 		console.log("formatAnchors");
@@ -106,6 +118,7 @@ formatAnchors = function() {
 		elems = document.getElementsByTagName("section");
 		for (var i = 0; i < elems.length; i++) {
 			elems[i].setAttribute("ref-num", i+1);
+			formatSection(elems[i], (i+1), "subsection");
 		}
 
 		resolve();
