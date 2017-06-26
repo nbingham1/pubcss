@@ -43,3 +43,7 @@ updateRefs = function() {
 		}
   }
 };
+
+window.onload = function() {
+	includeHTML(updateRefs);
+}
