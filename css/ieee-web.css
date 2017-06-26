@@ -1,41 +1,17 @@
 @charset "UTF-8";
 a[href^="#"] {
   color: blue;
-  text-decoration: none; }
-  a[href^="#"].section {
-    content: target-counter(attr(href, url), section); }
-    a[href^="#"].section::before {
-      content: ""; }
-    a[href^="#"].section::after {
-      content: ''; }
-  a[href^="#"].subsection {
-    content: target-counter(attr(href, url), section) "." target-counter(attr(href, url), subsection); }
-    a[href^="#"].subsection::before {
-      content: ""; }
-    a[href^="#"].subsection::after {
-      content: ''; }
-  a[href^="#"].subsubsubsection {
-    content: target-counter(attr(href, url), section) "." target-counter(attr(href, url), subsection) "." target-counter(attr(href, url), subsubsection) "." target-counter(attr(href, url), subsubsubsection); }
-    a[href^="#"].subsubsubsection::before {
-      content: ""; }
-    a[href^="#"].subsubsubsection::after {
-      content: ''; }
-  a[href^="#"].figure {
-    content: target-counter(attr(href, url), figure); }
-    a[href^="#"].figure::before {
-      content: "Fig. "; }
-    a[href^="#"].figure::after {
-      content: ''; }
-  a[href^="#"].table {
-    content: target-counter(attr(href, url), table); }
-    a[href^="#"].table::before {
-      content: "Table "; }
-    a[href^="#"].table::after {
-      content: ''; }
+  text-decoration: none;
+}
 
-sub { 
+sub {
     vertical-align: sub;
     font-size: smaller;
+}
+
+sup {
+	vertical-align: super;
+	font-size: smaller;
 }
 
 .print-only {
@@ -44,11 +20,6 @@ sub {
 
 .web-only {
 	display: initial;
-}
-
-iframe {
-	width: 750px;
-	height: 460px;
 }
 
 #banner {

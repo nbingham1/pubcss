@@ -1,49 +1,128 @@
-includeHTML = function(cb) {
-  var z, i, elmnt, file, xhttp;
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    file = elmnt.getAttribute("include-html");
-    if (file) {
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          elmnt.innerHTML = this.responseText;
-          elmnt.removeAttribute("include-html");
-          includeHTML(cb);
-					window.scrollTo(0, 0);
-        }
-      }      
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      return;
+// https://stackoverflow.com/questions/30008114/how-do-i-promisify-native-xhr
+function request(opts) {
+  return new Promise(function (resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open(opts.method, opts.url, true);
+    xhr.onload = function () {
+      if (this.status >= 200 && this.status < 300) {
+        resolve({
+					text: xhr.responseText,
+					pass: opts.pass
+				});
+      } else {
+        reject({
+          status: this.status,
+          text: xhr.statusText,
+					pass: opts.pass
+        });
+      }
+    };
+    xhr.onerror = function () {
+      reject({
+        status: this.status,
+        text: xhr.statusText,
+				pass: opts.pass
+      });
+    };
+    if (opts.headers) {
+      Object.keys(opts.headers).forEach(function (key) {
+        xhr.setRequestHeader(key, opts.headers[key]);
+      });
     }
-  }
-  if (cb) cb();
-};
+    var params = opts.params;
+    // We'll need to stringify if we've been given an object
+    // If we have a string, this is skipped.
+    if (params && typeof params === 'object') {
+      params = Object.keys(params).map(function (key) {
+        return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
+      }).join('&');
+    }
+    xhr.send(params);
+  });
+}
 
-updateRefs = function() {
-	var z, i, elmnt, url, w, c;
-	z = document.getElementsByTagName("cite");
-	for (i = 0; i < z.length; i++) {
-		z[i].innerHTML = "<div class=\"cite-ref\">[" + (i+1) + "]</div><div class=\"cite-txt\">" + z[i].innerHTML + "</div>";
-		z[i].setAttribute("ref-num", i+1);
-	}
-
-  z = document.getElementsByTagName("a");
-  for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    url = elmnt.getAttribute("href");
-		if (url && url.charAt(0) == '#') {
-			url = "cite" + url;
-			w = document.querySelectorAll(url);
-			if (w.length > 0) {
-				elmnt.innerHTML += " [" + w[0].getAttribute('ref-num') + "]";
+includeHTML = function() {
+	return new Promise(function(resolve, reject) {
+		console.log("includeHTML");
+		var promises = [];
+		var includes = document.getElementsByClassName("include");
+		for (var i = 0; i < includes.length; i++) {
+			var file = includes[i].getAttribute("include-html");
+			if (file) {
+				promises.push(request({
+					method: "GET",
+					url: file,
+					pass: includes[i]
+				}).then(function (response) {
+					return new Promise(function(resolve, reject) {
+						response.pass.innerHTML = response.text;
+      			response.pass.removeAttribute("include-html");
+						resolve();
+					});
+				}));
 			}
 		}
-  }
+
+		if (promises.length > 0) {
+			Promise.all(promises)
+				.then(includeHTML)
+				.then(resolve);
+		} else {
+			resolve();
+		}
+	});
+//window.scrollTo(0, 0);
+};
+
+formatAnchors = function() {
+	return new Promise(function(resolve, reject) {
+		console.log("formatAnchors");
+		var citations = document.getElementsByTagName("cite");
+		for (var i = 0; i < citations.length; i++) {
+			citations[i].innerHTML = "<div class=\"cite-ref\">[" + (i+1) + "]</div><div class=\"cite-txt\">" + citations[i].innerHTML + "</div>";
+			citations[i].setAttribute("ref-num", i+1);
+		}
+
+
+		resolve();
+	});
+};
+
+formatLinks = function() {
+	return new Promise(function(resolve, reject) {
+		console.log("formatLinks");
+		var links = document.getElementsByTagName("a");
+		for (i = 0; i < links.length; i++) {
+			url = links[i].getAttribute("href");
+			if (url && url.charAt(0) == '#') {
+				var ref = document.querySelector(url);
+				if (ref) {
+					var tag = ref.tagName.toLowerCase();
+					var cls = ref.className.toLowerCase();
+					var id = ref.getAttribute('ref-num');
+					if (tag == "cite") {
+						links[i].innerHTML += "["+id+"]";
+					}
+					else if (cls == "equation") {
+						links[i].innerHTML += "("+id+")";
+					}
+					else if (tag == "figure") {
+						links[i].innerHTML += "Fig. "+id;
+					}
+					else if (tag == "table") {
+						links[i].innerHTML += "Table "+id;
+					}
+					else {
+						links[i].innerHTML += id;
+					}
+				}
+			}
+		}
+
+		resolve();
+	});
 };
 
 window.onload = function() {
-	includeHTML(updateRefs);
+	includeHTML().then(formatAnchors).then(formatLinks);
 }
