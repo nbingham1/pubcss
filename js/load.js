@@ -82,12 +82,31 @@ includeHTML = function() {
 formatAnchors = function() {
 	return new Promise(function(resolve, reject) {
 		console.log("formatAnchors");
-		var citations = document.getElementsByTagName("cite");
-		for (var i = 0; i < citations.length; i++) {
-			citations[i].innerHTML = "<div class=\"cite-ref\">[" + (i+1) + "]</div><div class=\"cite-txt\">" + citations[i].innerHTML + "</div>";
-			citations[i].setAttribute("ref-num", i+1);
+		var elems = document.getElementsByTagName("cite");
+		for (var i = 0; i < elems.length; i++) {
+			elems[i].innerHTML = "<div class=\"cite-ref\">[" + (i+1) + "]</div><div class=\"cite-txt\">" + elems[i].innerHTML + "</div>";
+			elems[i].setAttribute("ref-num", i+1);
 		}
 
+		elems = document.getElementsByClassName("equation");
+		for (var i = 0; i < elems.length; i++) {	
+			elems[i].setAttribute("ref-num", i+1);
+		}
+
+		elems = document.getElementsByTagName("figure");
+		for (var i = 0; i < elems.length; i++) {
+			elems[i].setAttribute("ref-num", i+1);
+		}
+
+		elems = document.getElementsByTagName("table");
+		for (var i = 0; i < elems.length; i++) {
+			elems[i].setAttribute("ref-num", i+1);
+		}
+
+		elems = document.getElementsByTagName("section");
+		for (var i = 0; i < elems.length; i++) {
+			elems[i].setAttribute("ref-num", i+1);
+		}
 
 		resolve();
 	});
