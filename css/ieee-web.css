@@ -1,12 +1,7 @@
 @charset "UTF-8";
 a[href^="#"] {
-  color: inherit;
-  content: target-counter(attr(href, url), reference);
+  color: blue;
   text-decoration: none; }
-  a[href^="#"]::before {
-    content: "["; }
-  a[href^="#"]::after {
-    content: "]"; }
   a[href^="#"].section {
     content: target-counter(attr(href, url), section); }
     a[href^="#"].section::before {
@@ -38,13 +33,59 @@ a[href^="#"] {
     a[href^="#"].table::after {
       content: ''; }
 
+sub { 
+    vertical-align: sub;
+    font-size: smaller;
+}
+
+.print-only {
+	display: none;
+}
+
+.web-only {
+	display: initial;
+}
+
+iframe {
+	width: 750px;
+	height: 460px;
+}
+
+#banner {
+	position: absolute;
+	background-color: #00008B;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-family: "Verdana";
+        font-size: 18px;
+        color: #FFFFFF;	
+	padding: 0px;
+	margin: 0px;
+}
+
+.banner {
+	color: #FFFFFF;
+	text-decoration: none;
+	margin-right: 5%;
+	margin-left: 5%;
+}
+
+.wrap {
+	display: inline;
+}
+
 body {
-  column-count: 2;
+  column-count: 1;
   column-gap: balance;
   column-gap: 0.33in;
   font-family: "Times New Roman", Times, serif;
   hyphens: none;
-  text-align: justify; }
+  text-align: justify;
+	margin: 7% 7% 7% 7%; }
   body > :first-child {
     counter-reset: page 1; }
 
@@ -57,25 +98,32 @@ caption {
 
 cite {
   break-inside: avoid;
-  counter-increment: reference;
-  display: block;
+  display: table;
   font-style: normal;
-  margin-left: 2.5em;
+  margin-left: 0em;
   position: relative;
   text-align: left; }
-  cite::before {
-    content: "[" counter(reference) "]";
-    display: inline-block;
-    margin-left: -2.5em;
-    position: absolute; }
   cite a {
-    text-decoration: none; }
+		color: blue;
+  }
+
+div.cite-ref {
+	display: table-cell;
+	width: 2.5em;
+	text-align: center;
+}
+
+div.cite-txt {
+	display: table-cell;
+	width: calc(100% - 3em);
+}
 
 code {
   font-family: Courier, monospace;
-  font-size: 8pt;
-  font-weight: 400;
-  white-space: nowrap; }
+  font-size: 16pt;
+  font-weight: 500;
+  white-space: pre-wrap;
+}
 
 figure {
   counter-increment: figure;
@@ -124,7 +172,7 @@ h6 {
   font-size: "font-size-h6"; }
 
 html {
-  font-size: 10pt; }
+  font-size: 18pt; }
 
 p {
   line-height: 1.1;
@@ -144,13 +192,25 @@ q > q::after {
   content: '’'; }
 
 small {
-  font-size: 8pt; }
+  font-size: 14pt; }
 
 table {
   border-collapse: collapse;
   counter-increment: table;
   margin: 1.667em 0 1em;
   width: 100%; }
+
+thead { 
+display: table-row-group
+}
+
+tfoot {
+display: table-row-group
+}
+
+tr { 
+page-break-inside: avoid
+}
 
 th,
 td {
@@ -279,7 +339,7 @@ h6:not(.counter-skip)::before {
   break-after: always; }
 
 .abstract {
-  font-size: 9pt;
+  font-size: 18pt;
   font-weight: bold; }
   .abstract p {
     margin-bottom: 12pt; }
@@ -329,33 +389,29 @@ h4 {
   margin: 10pt 0 0; }
 
 ul {
-  margin-left: 2.5em; }
+}
 
 li {
-  margin-bottom: 6pt; }
+}
 
 ol {
-  counter-reset: ol;
-  list-style: none;
-  margin-left: 0;
-  text-indent: 1.5em; }
-  ol ol {
-    text-indent: 3em; }
-    ol ol > li::before {
-      content: counter(ol, lower-alpha) ") ";
-      counter-increment: ol; }
-  ol > li::before {
-    content: counter(ol, decimal) ") ";
-    counter-increment: ol;
-    font-style: italic; }
+  list-style: decimal outside none;
+  font-style: italic;
+}
+
+ol ol {
+	list-style: lower-alpha outside none;
+  font-style: italic;
+}
 
 .title {
-  font-size: 24pt;
+  font-size: 36pt;
   font-variant: normal;
-  margin-bottom: 5pt; }
+	margin-top: 0pt; 
+	margin-bottom: 5pt; }
 
 .subtitle {
-  font-size: 14pt;
+  font-size: 18pt;
   font-style: normal;
   font-weight: normal;
   margin-bottom: 35pt;
@@ -367,11 +423,11 @@ header {
   margin-bottom: 22pt; }
 
 table {
-  font-size: 8pt; }
+  font-size: 18pt; }
 
 caption,
 figcaption {
-  font-size: 8pt;
+  font-size: 18pt;
   font-weight: normal; }
 
 caption {
@@ -381,7 +437,7 @@ figcaption {
   text-align: left; }
 
 .footnote {
-  font-size: 8pt;
+  font-size: 18pt;
   font-weight: normal;
   margin-bottom: -.38in; }
   .footnote:footnote-call, .footnote:footnote-marker {
@@ -398,7 +454,7 @@ figcaption {
   column-break-after: always;
   text-align: center; }
   .author > :first-child {
-    font-size: 11pt; }
+    font-size: 18pt; }
 
 .equation {
   margin: 12pt 0 8pt;
@@ -421,6 +477,6 @@ h1.references {
   margin-top: 24pt; }
 
 cite {
-  font-size: 8pt;
+  font-size: 18pt;
   margin-bottom: 3pt;
   text-align: left; }
