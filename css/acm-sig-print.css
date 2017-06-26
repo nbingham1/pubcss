@@ -9,7 +9,8 @@ body {
   column-gap: 0.33in;
   font-family: "Times New Roman", Times, serif;
   hyphens: auto;
-  text-align: justify; }
+  text-align: justify;
+	margin: 0px 0px 0px 0px; }
   body > :first-child {
     counter-reset: page 1; }
 
