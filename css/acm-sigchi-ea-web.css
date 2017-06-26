@@ -1,50 +1,48 @@
 @charset "UTF-8";
 a[href^="#"] {
   color: inherit;
-  content: target-counter(attr(href, url), reference);
   text-decoration: none; }
-  a[href^="#"]::before {
-    content: "["; }
-  a[href^="#"]::after {
-    content: "]"; }
-  a[href^="#"].section {
-    content: target-counter(attr(href, url), section); }
-    a[href^="#"].section::before {
-      content: ""; }
-    a[href^="#"].section::after {
-      content: ''; }
-  a[href^="#"].subsection {
-    content: target-counter(attr(href, url), section) "." target-counter(attr(href, url), subsection); }
-    a[href^="#"].subsection::before {
-      content: ""; }
-    a[href^="#"].subsection::after {
-      content: ''; }
-  a[href^="#"].subsubsubsection {
-    content: target-counter(attr(href, url), section) "." target-counter(attr(href, url), subsection) "." target-counter(attr(href, url), subsubsection) "." target-counter(attr(href, url), subsubsubsection); }
-    a[href^="#"].subsubsubsection::before {
-      content: ""; }
-    a[href^="#"].subsubsubsection::after {
-      content: ''; }
-  a[href^="#"].figure {
-    content: target-counter(attr(href, url), figure); }
-    a[href^="#"].figure::before {
-      content: "Figure "; }
-    a[href^="#"].figure::after {
-      content: ''; }
-  a[href^="#"].table {
-    content: target-counter(attr(href, url), table); }
-    a[href^="#"].table::before {
-      content: "Table "; }
-    a[href^="#"].table::after {
-      content: ''; }
+
+.print-only {
+	display: none;
+}
+
+.web-only {
+	display: initial;
+}
+
+#banner {
+	position: absolute;
+	background-color: #00008B;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-family: "Verdana";
+        font-size: 18px;
+        color: #FFFFFF;	
+	padding: 0px;
+	margin: 0px;
+}
+
+.banner {
+	color: #FFFFFF;
+	text-decoration: none;
+	margin-right: 5%;
+	margin-left: 5%;
+}
+
 
 body {
-  column-count: 2;
+  column-count: 1;
   column-gap: balance;
   column-gap: 0.5in;
   font-family: Verdana, Helvetica, sans-serif;
   hyphens: none;
-  text-align: left; }
+  text-align: left; 
+	margin: 7% 7% 7% 7%; }
   body > :first-child {
     counter-reset: page 1; }
 
@@ -57,23 +55,29 @@ caption {
 
 cite {
   break-inside: avoid;
-  counter-increment: reference;
-  display: block;
+  display: table;
   font-style: normal;
-  margin-left: 2.5em;
+  margin-left: 0em;
   position: relative;
   text-align: left; }
-  cite::before {
-    content: "[" counter(reference) "]";
-    display: inline-block;
-    margin-left: -2.5em;
-    position: absolute; }
   cite a {
-    text-decoration: none; }
+		color: blue;
+  }
+
+div.cite-ref {
+	display: table-cell;
+	width: 2.5em;
+	text-align: center;
+}
+
+div.cite-txt {
+	display: table-cell;
+	width: calc(100% - 3em);
+}
 
 code {
   font-family: Courier, monospace;
-  font-size: 9pt;
+  font-size: 18pt;
   font-weight: 400;
   white-space: nowrap; }
 
@@ -117,7 +121,7 @@ h6 {
   font-size: "font-size-h6"; }
 
 html {
-  font-size: 8.5pt; }
+  font-size: 18pt; }
 
 p {
   line-height: 1.412;
@@ -137,7 +141,7 @@ q > q::after {
   content: '’'; }
 
 small {
-  font-size: 7.5pt; }
+  font-size: 16pt; }
 
 table {
   border-collapse: collapse;
@@ -223,18 +227,18 @@ td {
     width: 50%;
     margin: -.35in 0 0 -2in;
     font-family: Helvetica, sans-serif;
-    font-size: 9pt;
+    font-size: 18pt;
     font-weight: bold; }
   @top-right {
     content: '';
     margin: -.35in -.25in 0 0;
     font-family: Helvetica, sans-serif;
-    font-size: 9pt;
+    font-size: 18pt;
     font-weight: bold; }
   @bottom-right {
     margin: -.35in -.25in 0 0;
     font-family: Helvetica, sans-serif;
-    font-size: 9pt;
+    font-size: 18pt;
     font-weight: bold; } }
 
 header {
@@ -243,7 +247,7 @@ header {
   header h1 {
     border-top: 3pt solid #000;
     font-family: Helvetica;
-    font-size: 24pt;
+    font-size: 36pt;
     line-height: 24pt;
     margin-left: 1.52in;
     padding-top: 3pt; }
@@ -287,7 +291,7 @@ table {
 
 caption,
 figcaption {
-  font-size: 7.5pt;
+  font-size: 18pt;
   margin-top: 3pt;
   text-align: left; }
   caption::before,
@@ -295,41 +299,33 @@ figcaption {
     font-weight: bold; }
 
 .authors {
-  column-count: 2;
-  column-gap: .12in; }
+	column-count: 2;
+  column-gap: .12in;
+	margin-bottom: 18pt; }
 
 .author {
-  font-size: 7.5pt;
-  line-height: 12pt;
+  font-size: 18pt;
   margin-bottom: 10pt;
   page-break-inside: avoid; }
   .author > :first-child {
     font-weight: bold; }
 
 .copyright {
-  float: column-bottom;
-  font-size: 7pt;
-  line-height: 8.5pt; }
-  .copyright > * {
-    bottom: 2em;
-    left: 0;
-    position: absolute;
-    width: 3.38in; }
-  .copyright ul,
-  .copyright li {
-    line-height: 8.5pt;
-    margin-bottom: 0; }
+  display: inline-block;
+	font-size: 18pt;
+	margin-bottom: 18pt;
+}
 
 .abstract {
   column-break-before: always;
-  margin-bottom: 11.5pt; }
+  margin-bottom: 18pt; }
 
 .footnote {
-  font-size: 7.5pt;
+  font-size: 18pt;
   margin-left: 3pt;
   padding-left: 6pt; }
   .footnote:footnote-marker {
-    font-size: 7.5pt; }
+    font-size: 18pt; }
 
 cite {
   margin-bottom: 4pt; }

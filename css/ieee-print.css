@@ -2,36 +2,6 @@
 a[href^="#"] {
   color: inherit;
   text-decoration: none; }
-  a[href^="#"].section {
-    content: target-counter(attr(href, url), section); }
-    a[href^="#"].section::before {
-      content: ""; }
-    a[href^="#"].section::after {
-      content: ''; }
-  a[href^="#"].subsection {
-    content: target-counter(attr(href, url), section) "." target-counter(attr(href, url), subsection); }
-    a[href^="#"].subsection::before {
-      content: ""; }
-    a[href^="#"].subsection::after {
-      content: ''; }
-  a[href^="#"].subsubsubsection {
-    content: target-counter(attr(href, url), section) "." target-counter(attr(href, url), subsection) "." target-counter(attr(href, url), subsubsection) "." target-counter(attr(href, url), subsubsubsection); }
-    a[href^="#"].subsubsubsection::before {
-      content: ""; }
-    a[href^="#"].subsubsubsection::after {
-      content: ''; }
-  a[href^="#"].figure {
-    content: target-counter(attr(href, url), figure); }
-    a[href^="#"].figure::before {
-      content: "Fig. "; }
-    a[href^="#"].figure::after {
-      content: ''; }
-  a[href^="#"].table {
-    content: target-counter(attr(href, url), table); }
-    a[href^="#"].table::before {
-      content: "Table "; }
-    a[href^="#"].table::after {
-      content: ''; }
 
 .print-only {
 	display: initial;

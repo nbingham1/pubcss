@@ -3,6 +3,38 @@ a[href^="#"] {
   color: inherit;
   text-decoration: none; }
 
+.print-only {
+	display: initial;
+}
+
+.web-only {
+	display: none;
+}
+
+#banner {
+	position: absolute;
+	background-color: #00008B;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-family: "Verdana";
+        font-size: 18px;
+        color: #FFFFFF;	
+	padding: 0px;
+	margin: 0px;
+}
+
+.banner {
+	color: #FFFFFF;
+	text-decoration: none;
+	margin-right: 5%;
+	margin-left: 5%;
+}
+
+
 body {
   column-count: 2;
   column-gap: balance;
@@ -23,19 +55,25 @@ caption {
 
 cite {
   break-inside: avoid;
-  counter-increment: reference;
-  display: block;
+  display: table;
   font-style: normal;
-  margin-left: 2.5em;
+  margin-left: 0em;
   position: relative;
   text-align: left; }
-  cite::before {
-    content: "[" counter(reference) "]";
-    display: inline-block;
-    margin-left: -2.5em;
-    position: absolute; }
   cite a {
-    text-decoration: none; }
+		color: blue;
+  }
+
+div.cite-ref {
+	display: table-cell;
+	width: 2.5em;
+	text-align: center;
+}
+
+div.cite-txt {
+	display: table-cell;
+	width: calc(100% - 3em);
+}
 
 code {
   font-family: Courier, monospace;
@@ -300,14 +338,9 @@ header {
     font-size: 12pt; }
 
 .copyright {
-  float: column-bottom;
+	display: inline-block;
   font-size: 8pt;
   height: 1.5in; }
-  .copyright > * {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    width: 3.333in; }
 
 cite {
   margin-bottom: .333em;
