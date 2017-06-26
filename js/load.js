@@ -6,6 +6,7 @@ function request(opts) {
     xhr.onload = function () {
       if (this.status >= 200 && this.status < 300) {
         resolve({
+					obj: xhr.response,
 					text: xhr.responseText,
 					pass: opts.pass
 				});
@@ -45,10 +46,11 @@ includeHTML = function() {
 	return new Promise(function(resolve, reject) {
 		console.log("includeHTML");
 		var promises = [];
-		var includes = document.getElementsByClassName("include");
+		var includes = document.getElementsByTagName("embed");
 		for (var i = 0; i < includes.length; i++) {
-			var file = includes[i].getAttribute("include-html");
-			if (file) {
+			var file = includes[i].getAttribute("src");
+			var ext = file.split('.').pop().toLowerCase();
+			if (file && ext == "html") {
 				promises.push(request({
 					method: "GET",
 					url: file,
@@ -56,7 +58,11 @@ includeHTML = function() {
 				}).then(function (response) {
 					return new Promise(function(resolve, reject) {
 						response.pass.innerHTML = response.text;
-      			response.pass.removeAttribute("include-html");
+						content = response.pass.childNodes;
+						for (var j = 0; j < content.length; j++) {
+							response.pass.parentNode.insertBefore(content[j], response.pass);
+						}
+						response.pass.parentNode.removeChild(response.pass);
 						resolve();
 					});
 				}));
