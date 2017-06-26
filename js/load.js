@@ -44,7 +44,6 @@ function request(opts) {
 
 includeHTML = function() {
 	return new Promise(function(resolve, reject) {
-		console.log("includeHTML");
 		var promises = [];
 		var includes = document.getElementsByTagName("div");
 		for (var i = 0; i < includes.length; i++) {
@@ -80,10 +79,6 @@ includeHTML = function() {
 };
 
 formatSection = function(section, id, type) {
-	console.log("formatSection");
-	console.log(section);
-	console.log(id);
-	console.log(type);
 	elems = section.getElementsByTagName(type);
 	for (var i = 0; i < elems.length; i++) {
 		elems[i].setAttribute("ref-num", id + "." + (i+1));
@@ -93,7 +88,6 @@ formatSection = function(section, id, type) {
 
 formatAnchors = function() {
 	return new Promise(function(resolve, reject) {
-		console.log("formatAnchors");
 		var elems = document.getElementsByTagName("cite");
 		for (var i = 0; i < elems.length; i++) {
 			elems[i].innerHTML = "<div class=\"cite-ref\">[" + (i+1) + "]</div><div class=\"cite-txt\">" + elems[i].innerHTML + "</div>";
@@ -127,7 +121,6 @@ formatAnchors = function() {
 
 formatLinks = function() {
 	return new Promise(function(resolve, reject) {
-		console.log("formatLinks");
 		var links = document.getElementsByTagName("a");
 		for (i = 0; i < links.length; i++) {
 			url = links[i].getAttribute("href");
