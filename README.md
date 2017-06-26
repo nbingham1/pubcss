@@ -4,13 +4,10 @@ PubCSS is a library of CSS stylesheets and HTML templates for formatting academi
 
 Currently, the following formats are supported:
 
-* [ACM SIG Proceedings](http://www.acm.org/sigs/publications/proceedings-templates)
-* [ACM SIGCHI Conference Papers](http://www.sigchi.org/publications/chipubform)
-* [ACM SIGCHI Extended Abstracts](http://www.sigchi.org/publications/chipubform)
-* [IEEE Conference Proceedings](http://www.ieee.org/conferences_events/conferences/publishing/templates.html)
-
-Check out sample output [here](http://thomaspark.me/2015/01/pubcss-formatting-academic-publications-in-html-css/).
-
+* [ACM SIG Proceedings](http://www.acm.org/sigs/publications/proceedings-templates) ([demo](templates/acm-sig.html))
+* [ACM SIGCHI Conference Papers](http://www.sigchi.org/publications/chipubform) ([demo](templates/acm-sigchi.html))
+* [ACM SIGCHI Extended Abstracts](http://www.sigchi.org/publications/chipubform) ([demo](templates/acm-sigchi-ea.html))
+* [IEEE Conference Proceedings](http://www.ieee.org/conferences_events/conferences/publishing/templates.html): ([demo](templates/ieee.html))
 
 ## Quick Start
 
