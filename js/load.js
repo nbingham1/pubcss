@@ -75,7 +75,6 @@ includeHTML = function() {
 			resolve();
 		}
 	});
-//window.scrollTo(0, 0);
 };
 
 formatSection = function(section, id, type) {

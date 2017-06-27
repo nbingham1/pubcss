@@ -6,10 +6,6 @@
     <link rel="stylesheet" href="../css/ieee-web.css">
     <link rel="stylesheet" href="../css/ieee-print.css" media="print">
 		<script src="../js/load.js"></script>
-    <style>
-
-
-    </style>
   </head>
   <body>
 		<div class="web-only" id="banner">
@@ -152,7 +148,8 @@
         </ol>
       </ol>
 
-      <table id="example-table" style="margin-bottom: 0;">
+      <table id="example-table">
+        <caption>Table Type Styles</caption>
         <thead>
           <tr>
             <th rowspan="2">Table<br>Head</th>
@@ -172,13 +169,12 @@
             <td></td>
           </tr>
         </tbody>
-        <caption>Table Type Styles</caption>
+				<caption class="foot"><sup>a</sup>Sample of a Table footnote. (<em>Table footnote</em>)</caption>
       </table>
-      <div style="text-align: right; font-size: 7pt;"><sup>a</sup>Sample of a Table footnote. (<em>Table footnote</em>)</div>
 
       <figure id="example-figure">
-        <figcaption>Example of a figure caption. (figure caption)</figcaption>
         <div style="border: 1px solid #000; height: 110px; margin-top: 6px;"></div>
+        <figcaption>Example of a figure caption. (figure caption)</figcaption>
       </figure>
 
       <p>Figure Labels: Use 8 point Times New Roman for Figure labels. Use words rather than symbols or abbreviations when writing Figure axis labels to avoid confusing the reader. As an example, write the quantity <q>Magnetization</q>, or <q>Magnetization, M</q>, not just <q>M</q>. If including units in the label, present them within parentheses. Do not label axes only with units. In the example, write <q>Magnetization (A/m)</q> or <q>Magnetization {A[m(1)]}</q>, not just <q>A/m</q>. Do not label axes with a ratio of quantities and units. For example, write <q>Temperature (K)</q>, not <q>Temperature/K</q>.</p>

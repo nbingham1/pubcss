@@ -1,0 +1,22 @@
+@charset "UTF-8";
+cite {
+	display: table;
+	position: relative;
+	font-style: normal;
+	font-size: 0.8em;
+	text-align: left;
+	break-inside: avoid;
+	margin-left: 0em;
+	margin-bottom: 3pt;
+}
+
+div.cite-ref {
+	display: table-cell;
+	width: 2.5em;
+	text-align: center;
+}
+
+div.cite-txt {
+	display: table-cell;
+	width: calc(100% - 3em);
+}
