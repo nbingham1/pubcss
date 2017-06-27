@@ -58,13 +58,14 @@ figcaption {
 	text-align: left;
 	font: inherit;
 	font-size: 0.8em;
-	font-weight: bold;
+	font-weight: normal;
 	margin: 0 0 4pt; }
 
 figcaption::before {
 	content: "Fig. " counter(figure) ". "; }
 
 table {
+	font-size: 0.8em; 
 	page-break-inside: avoid;
 	border-collapse: collapse;
 	border-spacing: 0px;	
@@ -83,6 +84,7 @@ td {
 table > caption:not(.foot) {
 	caption-side: top;
 	font: inherit;
+	font-variant: small-caps;
 	font-weight: bold;
 	margin: 0 0 4pt;
 }
@@ -92,12 +94,12 @@ table > caption:not(.foot)::before {
 }
 
 table > caption.foot {
-	caption-side: bottom;
 	font: inherit;
-	font-size: 0.7em;
+	font-size: 0.8em;
+	font-weight: normal;
+	caption-side: bottom;
 	text-align: right;
 }
-
 
 h1,
 h2,
@@ -200,19 +202,19 @@ h1:not(.counter-skip)::before {
 	content: "" "" counter(section, upper-roman) "."; }
 
 h2:not(.counter-skip)::before {
-	content: "" "" counter(section, upper-roman) "." counter(subsection, upper-alpha) "."; }
+	content: "" "" counter(subsection, upper-alpha) "."; }
 
 h3:not(.counter-skip)::before {
-	content: "" "" counter(section, upper-roman) "." counter(subsection, upper-alpha) "." counter(subsubsection, decimal) "."; }
+	content: "" "" counter(subsubsection, decimal) "."; }
 
 h4:not(.counter-skip)::before {
-	content: "" "" counter(section, upper-roman) "." counter(subsection, upper-alpha) "." counter(subsubsection, decimal) "." counter(subsubsection, lower-alpha) "."; }
+	content: "" "" counter(subsubsection, lower-alpha) "."; }
 
 h5:not(.counter-skip)::before {
-	content: "" "" counter(section, upper-roman) "." counter(subsection, upper-alpha) "." counter(subsubsection, decimal) "." counter(subsubsection, lower-alpha) "." counter(subsubsubsection, upper-roman) "."; }
+	content: "" "" counter(subsubsubsection, upper-roman) "."; }
 
 h6:not(.counter-skip)::before {
-	content: "" "" counter(section, upper-roman) "." counter(subsection, upper-alpha) "." counter(subsubsection, decimal) "." counter(subsubsection, lower-alpha) "." counter(subsubsubsection, upper-roman) "." counter(subsubsubsubsection, upper-roman) "."; }
+	content: "" "" counter(subsubsubsubsection, upper-roman) "."; }
 
 .page-break-after { break-after: always; }
 .page-break-before { break-after: always; }
@@ -251,12 +253,6 @@ h3,
 h4,
 h5 {
 	page-break-after: auto; }
-
-h2:not(.counter-skip)::before {
-	content: "" counter(subsection, upper-alpha) "."; }
-
-h5:not(.counter-skip)::before {
-	content: none; }
 
 h1 + h2,
 h1 + * > h2:first-child {
@@ -300,20 +296,6 @@ ol ol {
 header {
 	column-span: all;
 	margin-bottom: 22pt; }
-
-table {
-	font-size: 0.8em; }
-
-caption,
-figcaption {
-	font-size: 0.8em;
-	font-weight: normal; }
-
-caption {
-	font-variant: small-caps; }
-
-figcaption {
-	text-align: left; }
 
 .footnote {
 	font-size: 0.8em;
