@@ -51,10 +51,10 @@ code.block {
 	font-size: 0.8em;
 	border: 1px solid;
 	page-break-inside: avoid;
-	max-width: calc(100% - 30px);
-	padding: 15px;
+	max-width: calc(100% - 20px);
+	padding: 10px;
 	counter-increment: code;
-	margin: 1.333em 0 2.333em;
+	margin: 1em 0 1em;
 }
 
 figure {
