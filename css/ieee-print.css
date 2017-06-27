@@ -41,18 +41,29 @@ img {
 
 code {
 	display: inline;
-	font-size: 0.8em;
 	font-family: Courier, monospace;
 	text-align: left;
 	white-space: pre-wrap;
 }
 
-figure {
+code.block {
+	display: block;
+	font-size: 0.8em;
+	border: 1px solid;
 	page-break-inside: avoid;
-	width: 100%;
+	max-width: calc(100% - 30px);
+	padding: 15px;
+	counter-increment: code;
+	margin: 1.333em 0 2.333em;
+}
+
+figure {
+	display: block;
+	page-break-inside: avoid;
+	max-width: 100%;
 	counter-increment: figure;
 	margin: 1.333em 0 2.333em;
-	text-align: center; }
+}
 
 figcaption {
 	caption-side: bottom;
