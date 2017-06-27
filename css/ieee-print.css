@@ -48,13 +48,13 @@ code {
 
 code.block {
 	display: block;
-	font-size: 0.8em;
+	font-size: 0.8rem;
 	border: 1px solid;
 	page-break-inside: avoid;
-	max-width: calc(100% - 20px);
-	padding: 5px 10px 5px 10px;
+	max-width: calc(100% - 2.0rem);
+	padding: 0.5rem 1.0rem 0.5rem 1.0rem;
 	counter-increment: code;
-	margin: 1em 0 1em;
+	margin: 1rem 0 1rem;
 }
 
 figure {
@@ -62,35 +62,35 @@ figure {
 	page-break-inside: avoid;
 	max-width: 100%;
 	counter-increment: figure;
-	margin: 1.333em 0 2.333em;
+	margin: 1.333rem 0 2.333rem;
 }
 
 figcaption {
 	caption-side: bottom;
 	text-align: left;
 	font: inherit;
-	font-size: 0.8em;
+	font-size: 0.8rem;
 	font-weight: normal;
-	margin: 0 0 4pt; }
+	margin: 0 0 0.4rem; }
 
 figcaption::before {
 	content: "Fig. " counter(figure) ". "; }
 
 table {
-	font-size: 0.8em; 
+	font-size: 0.8rem; 
 	page-break-inside: avoid;
 	border-collapse: collapse;
 	border-spacing: 0px;	
 	counter-increment: table;
-	margin: 1.667em 0 1em;
+	margin: 1.667rem 0 1rem;
 	width: 100%; }
 
 th,
 td {
 	border-spacing: 0px;	
 	border: 1px solid #000;
-	margin: 0px 0px 0px 0px;
-	padding: 0.333em;
+	margin: 0 0 0 0;
+	padding: 0.333rem;
 	text-align: center; }
 
 table > caption:not(.foot) {
@@ -98,7 +98,7 @@ table > caption:not(.foot) {
 	font: inherit;
 	font-variant: small-caps;
 	font-weight: bold;
-	margin: 0 0 4pt;
+	margin: 0 0 0.4rem;
 }
 
 table > caption:not(.foot)::before {
@@ -107,86 +107,25 @@ table > caption:not(.foot)::before {
 
 table > caption.foot {
 	font: inherit;
-	font-size: 0.8em;
+	font-size: 0.8rem;
 	font-weight: normal;
 	caption-side: bottom;
 	text-align: right;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
 	break-after: avoid;
 	font-family: "Times New Roman", Times, serif;
-	font-weight: bold;
+	font-weight: normal;
 	hyphens: none; }
-	h1:not(.counter-skip)::before,
-	h2:not(.counter-skip)::before,
-	h3:not(.counter-skip)::before,
-	h4:not(.counter-skip)::before,
-	h5:not(.counter-skip)::before,
-	h6:not(.counter-skip)::before {
-	margin-right: .5em; }
 
-h1 { font-size: "font-size-h1"; }
-h2 { font-size: "font-size-h2"; }
-h3 { font-size: "font-size-h3"; }
-h4 { font-size: "font-size-h4"; }
-h5 { font-size: "font-size-h5"; }
-h6 { font-size: "font-size-h6"; }
-
-p {
-	line-height: 1.1;
-	margin: 0 0 0.5em;
-	text-indent: 1.5em; }
-
-q::before { content: '“'; }
-q::after { content: '”'; }
-q > q::before { content: '‘'; }
-q > q::after { content: '’'; }
-
-small { font-size: 0.8em; }
-
-.footnote {
-	counter-increment: footnote;
-	float: prince-column-footnote;
-	margin-left: .333em;
-	padding-left: .667em; }
-	.footnote:footnote-call {
-	content: counter(footnote);
-	font-size: 0.66em;
-	line-height: none;
-	vertical-align: super; }
-	.footnote:footnote-marker {
-	content: counter(footnote);
-	font-size: 0.66em;
-	footnote-style-position: inside; }
-
-@page {
-	escape("@")footnotes {
-	border-top: 0.5px solid #000;
-	columns: 2;
-	margin-top: 1em;
-	padding-top: 3pt; }
-	size: 8.5in 11in;
-	margin: 0.75in 0.62in 1in 0.62in; }
-
-.cites > :not(:first-child)::before {
-	content: none; }
-
-.cites > :not(:last-child)::after {
-	content: ", "; }
-
-.col-1 { column-count: 1; }
-.col-2 { column-count: 2; }
-.col-3 { column-count: 3; }
-.col-4 { column-count: 4; }
-.col-span { column-span: all; }
-.col-break-after { break-after: always; }
-.col-break-before { break-after: always; }
+h1:not(.counter-skip)::before,
+h2:not(.counter-skip)::before,
+h3:not(.counter-skip)::before,
+h4:not(.counter-skip)::before,
+h5:not(.counter-skip)::before,
+h6:not(.counter-skip)::before {
+	margin-right: 0.5rem; }
 
 .counter-skip h1::before,
 .counter-skip h2::before,
@@ -228,57 +167,113 @@ h5:not(.counter-skip)::before {
 h6:not(.counter-skip)::before {
 	content: "" "" counter(subsubsubsubsection, upper-roman) "."; }
 
+
+
+h1 {
+	font-size: "font-size-h1";
+	font-variant: small-caps;
+	margin-bottom: 0.4rem;
+	text-align: center;
+}
+
+h2 {
+	font-size: "font-size-h2";
+	font-style: italic;
+	margin-bottom: 0.2rem;
+}
+
+h3 {
+	font-size: "font-size-h3";
+	page-break-after: auto; 
+	text-indent: 1.5rem;
+	font-style: italic;
+	margin: 1.0rem 0 0; 
+}
+
+h4 {
+	font-size: "font-size-h4";
+	page-break-after: auto; 
+	text-indent: 2.25rem;
+	font-style: italic;
+	margin: 1.0rem 0 0; 
+}
+
+h5 {
+	font-size: "font-size-h5";
+	page-break-after: auto; 
+	font-variant: small-caps;
+	margin-bottom: 0.4rem;
+	text-align: center;
+}
+
+h6 {
+	font-size: "font-size-h6";
+}
+
+h1 + h2,
+h1 + * > h2:first-child {
+	margin-top: 1.0rem; }
+
+p {
+	line-height: 1.1;
+	margin: 0 0 0.5rem;
+	text-indent: 1.5rem; }
+
+q::before { content: '“'; }
+q::after { content: '”'; }
+q > q::before { content: '‘'; }
+q > q::after { content: '’'; }
+
+small { font-size: 0.8rem; }
+
+.footnote {
+	counter-increment: footnote;
+	float: prince-column-footnote;
+	margin-left: .333rem;
+	padding-left: .667rem; }
+	.footnote:footnote-call {
+	content: counter(footnote);
+	font-size: 0.66rem;
+	line-height: none;
+	vertical-align: super; }
+	.footnote:footnote-marker {
+	content: counter(footnote);
+	font-size: 0.66rem;
+	footnote-style-position: inside; }
+
+@page {
+	escape("@")footnotes {
+	border-top: 0.5px solid #000;
+	columns: 2;
+	margin-top: 1rem;
+	padding-top: 0.3rem; }
+	size: 8.5in 11in;
+	margin: 0.75in 0.62in 1in 0.62in; }
+
+.cites > :not(:first-child)::before {
+	content: none; }
+
+.cites > :not(:last-child)::after {
+	content: ", "; }
+
+.col-1 { column-count: 1; }
+.col-2 { column-count: 2; }
+.col-3 { column-count: 3; }
+.col-4 { column-count: 4; }
+.col-span { column-span: all; }
+.col-break-after { break-after: always; }
+.col-break-before { break-after: always; }
+
 .page-break-after { break-after: always; }
 .page-break-before { break-after: always; }
 
 .abstract {
-	font-size: 0.9em;
-	font-weight: bold; }
-	.abstract p {
-	margin-bottom: 12pt; }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-weight: normal; }
-
-h1,
-h5 {
-	font-variant: small-caps;
-	margin-bottom: 4pt;
-	text-align: center; }
-
-h3 {
-	text-indent: 1.5em; }
-
-h4 {
-	text-indent: 2.25em; }
-
-h2 {
-	font-style: italic;
-	margin-bottom: 2pt; }
-
-h3,
-h4,
-h5 {
-	page-break-after: auto; }
-
-h1 + h2,
-h1 + * > h2:first-child {
-	margin-top: 10pt; }
-
-h3,
-h4 {
-	font-style: italic;
-	margin: 10pt 0 0; }
-
-ul {
+	font-size: 0.9rem;
+	font-weight: bold;
 }
 
-li {
+.abstract p {
+	margin-bottom: 1.2rem;
 }
 
 ol {
@@ -292,25 +287,25 @@ ol ol {
 }
 
 .title {
-	font-size: 2.4em;
+	font-size: 2.4rem;
 	font-variant: normal;
-	margin-top: 0px;
-	margin-bottom: 5pt; }
+	margin-top: 0;
+	margin-bottom: 0.5rem; }
 
 .subtitle {
-	font-size: 1.4em;
+	font-size: 1.4rem;
 	font-style: normal;
 	font-weight: normal;
-	margin-bottom: 35pt;
+	margin-bottom: 3.5rem;
 	margin-top: 0;
 	text-align: center; }
 
 header {
 	column-span: all;
-	margin-bottom: 22pt; }
+	margin-bottom: 2.2rem; }
 
 .footnote {
-	font-size: 0.8em;
+	font-size: 0.8rem;
 	font-weight: normal;
 	margin-bottom: -.38in; }
 	.footnote:footnote-call, .footnote:footnote-marker {
@@ -320,17 +315,17 @@ header {
 .authors {
 	column-gap: 0; }
 	.authors + .authors {
-	margin-top: 6pt; }
+	margin-top: 0.6rem; }
 
 .author {
 	break-inside: avoid;
 	column-break-after: always;
 	text-align: center; }
 	.author > :first-child {
-	font-size: 1.1em; }
+	font-size: 1.1rem; }
 
 .equation {
-	margin: 12pt 0 8pt;
+	margin: 1.2rem 0 0.8rem;
 	text-align: center; }
 	.equation:not(.displaymath) {
 	counter-increment: equation;
@@ -344,7 +339,7 @@ header {
 	top: 50%; }
 
 .references {
-	margin-top: 18pt; }
+	margin-top: 1.8rem; }
 
 h1.references {
-	margin-top: 24pt; }
+	margin-top: 2.4rem; }
