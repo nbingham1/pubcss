@@ -172,14 +172,14 @@ h6:not(.counter-skip)::before {
 h1 {
 	font-size: "font-size-h1";
 	font-variant: small-caps;
-	margin-bottom: 0.4rem;
+	margin-bottom: 0.2rem;
 	text-align: center;
 }
 
 h2 {
 	font-size: "font-size-h2";
 	font-style: italic;
-	margin-bottom: 0.2rem;
+	margin-bottom: 0.1rem;
 }
 
 h3 {
@@ -202,7 +202,7 @@ h5 {
 	font-size: "font-size-h5";
 	page-break-after: auto; 
 	font-variant: small-caps;
-	margin-bottom: 0.4rem;
+	margin-bottom: 0.2rem;
 	text-align: center;
 }
 
@@ -212,7 +212,7 @@ h6 {
 
 h1 + h2,
 h1 + * > h2:first-child {
-	margin-top: 1.0rem; }
+	margin-top: 0.5rem; }
 
 p {
 	line-height: 1.1;
