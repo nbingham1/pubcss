@@ -1,6 +1,6 @@
 .theorem {
     display: block;
-    margin: 12px 0;
+    margin: 1.2rem 0 0 0;
     font-style: italic;
 }
 .theorem:before {
@@ -11,7 +11,7 @@
 
 .lemma {
     display: block;
-    margin: 12px 0;
+    margin: 1.2rem 0 0 0;
     font-style: italic;
 }
 .lemma:before {
@@ -22,7 +22,7 @@
 
 .proof {
     display: block;
-    margin: 12px 0;
+    margin: 1.2rem 0 0 0;
     font-style: normal;
 }
 .proof:before {
@@ -36,7 +36,7 @@
 
 .definition {
     display: block;
-    margin: 12px 0;
+    margin: 1.2rem 0 0 0;
     font-style: normal;
 }
 .definition:before {

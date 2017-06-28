@@ -3,20 +3,25 @@ cite {
 	display: table;
 	position: relative;
 	font-style: normal;
-	font-size: 0.8em;
+	font-size: 0.8rem;
 	text-align: left;
 	break-inside: avoid;
-	margin-left: 0em;
-	margin-bottom: 3pt;
+	margin-left: 0;
+	margin-bottom: 0.3rem;
+}
+
+cite::before {
+	font-style: normal;
+	font-size: 0.8rem;
 }
 
 div.cite-ref {
 	display: table-cell;
-	width: 2.5em;
+	width: 2.5rem;
 	text-align: center;
 }
 
 div.cite-txt {
 	display: table-cell;
-	width: calc(100% - 3em);
+	width: calc(100% - 3rem);
 }
