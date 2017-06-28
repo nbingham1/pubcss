@@ -6,7 +6,6 @@
 
 html {
 	font-size: 10pt;
-	text-justify: none;
 }
 
 body {
@@ -116,6 +115,7 @@ table > caption.foot {
 }
 
 h1, h2, h3, h4, h5, h6 {
+	text-justify: none;
 	break-after: avoid;
 	font-family: "Times New Roman", Times, serif;
 	font-weight: normal;
@@ -217,6 +217,7 @@ h1 + * > h2:first-child {
 	margin-top: 0.2rem; }
 
 p {
+	text-justify: none;
 	line-height: 1.1;
 	margin: 0 0 0.5rem 0;
 	text-indent: 1.5rem; }
