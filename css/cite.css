@@ -4,7 +4,7 @@ cite {
 	position: relative;
 	font-style: normal;
 	font-size: 0.8rem;
-	text-align: left;
+	text-align: justify;
 	break-inside: avoid;
 	margin: 0 0 0.3rem 0;
 }
