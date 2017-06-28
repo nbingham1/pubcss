@@ -218,7 +218,7 @@ h1 + * > h2:first-child {
 
 p {
 	text-align: justify;
-	line-height: 1.2rem;
+	line-height: 1;
 	margin: 0 0 0.5rem 0;
 	text-indent: 1.5rem; }
 
@@ -281,7 +281,7 @@ small { font-size: 0.8rem; }
 
 ul {
 	text-align: justify;
-	line-height: 1.2rem;
+	line-height: 1;
 	margin: 0 0 0.5rem 0;
 }
 
@@ -291,7 +291,7 @@ ul ul {
 
 ol {
 	text-align: justify;
-	line-height: 1.2rem;
+	line-height: 1;
 	list-style: decimal outside none;
 	font-style: italic;
 	margin: 0 0 0.5rem 0;

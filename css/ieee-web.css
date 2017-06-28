@@ -24,6 +24,10 @@ a {
 	text-decoration: none;
 }
 
+p, ul, ol {
+	line-height: 1.2rem;
+}
+
 .print-only {
 	display: none;
 }
