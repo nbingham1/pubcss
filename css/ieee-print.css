@@ -172,14 +172,14 @@ h6:not(.counter-skip)::before {
 h1 {
 	font-size: "font-size-h1";
 	font-variant: small-caps;
-	margin-bottom: 0.2rem;
+	margin: 0 0 0.2rem 0;
 	text-align: center;
 }
 
 h2 {
 	font-size: "font-size-h2";
 	font-style: italic;
-	margin-bottom: 0.1rem;
+	margin: 0 0 0.1rem 0;
 }
 
 h3 {
@@ -187,7 +187,7 @@ h3 {
 	page-break-after: auto; 
 	text-indent: 1.5rem;
 	font-style: italic;
-	margin: 1.0rem 0 0; 
+	margin: 0.5rem 0 0 0; 
 }
 
 h4 {
@@ -195,14 +195,14 @@ h4 {
 	page-break-after: auto; 
 	text-indent: 2.25rem;
 	font-style: italic;
-	margin: 0.5rem 0 0; 
+	margin: 0.5rem 0 0 0; 
 }
 
 h5 {
 	font-size: "font-size-h5";
 	page-break-after: auto; 
 	font-variant: small-caps;
-	margin-bottom: 0.2rem;
+	margin: 0 0 0.2rem 0;
 	text-align: center;
 }
 
@@ -216,7 +216,7 @@ h1 + * > h2:first-child {
 
 p {
 	line-height: 1.1;
-	margin: 0 0 0.25rem;
+	margin: 0 0 0.5rem;
 	text-indent: 1.5rem; }
 
 q::before { content: '“'; }
