@@ -20,6 +20,6 @@ div.cite-ref {
 div.cite-txt {
 	display: table-cell;
 	width: calc(100% - 3rem);
+	font-style: normal;
 	font-size: 0.8rem;
-	text-align: center;
 }
