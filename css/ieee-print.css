@@ -276,14 +276,24 @@ small { font-size: 0.8rem; }
 	margin-bottom: 1.2rem;
 }
 
+ul {
+	margin: 0 0 0.5rem 0;
+}
+
+ul ul {
+	margin: 0 0 0 0;
+}
+
 ol {
 	list-style: decimal outside none;
 	font-style: italic;
+	margin: 0 0 0.5rem 0;
 }
 
 ol ol {
 	list-style: lower-alpha outside none;
 	font-style: italic;
+	margin: 0 0 0 0;
 }
 
 .title {
