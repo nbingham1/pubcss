@@ -14,7 +14,6 @@ body {
 	column-gap: 0.33in;
 	font-family: "Times New Roman", Times, serif;
 	hyphens: none;
-	text-align: justify;
 	margin: 0% 0% 0% 0%;
 }
 
@@ -218,8 +217,7 @@ h1 + * > h2:first-child {
 	margin-top: 0.2rem; }
 
 p {
-	text-align: left;
-	text-justify: none;
+	text-align: justify;
 	line-height: 1.1;
 	margin: 0 0 0.5rem 0;
 	text-indent: 1.5rem; }
