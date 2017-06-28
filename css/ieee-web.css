@@ -24,8 +24,8 @@ a {
 	text-decoration: none;
 }
 
-p, ul, ol {
-	line-height: 1.2rem;
+p, ul, ol, cite {
+	line-height: 1.2;
 }
 
 .print-only {
