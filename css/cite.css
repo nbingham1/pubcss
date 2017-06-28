@@ -2,6 +2,7 @@
 cite {
 	display: block;
 	position: relative;
+	line-height: 1.2rem;
 	font-style: normal;
 	font-size: 0.8rem;
 	text-align: justify;
