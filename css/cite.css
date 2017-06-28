@@ -6,22 +6,20 @@ cite {
 	font-size: 0.8rem;
 	text-align: left;
 	break-inside: avoid;
-	margin-left: 0;
-	margin-bottom: 0.3rem;
-}
-
-cite::before {
-	font-style: normal;
-	font-size: 0.8rem;
+	margin: 0 0 0.3rem 0;
 }
 
 div.cite-ref {
 	display: table-cell;
 	width: 2.5rem;
+	font-style: normal;
+	font-size: 0.8rem;
 	text-align: center;
 }
 
 div.cite-txt {
 	display: table-cell;
 	width: calc(100% - 3rem);
+	font-size: 0.8rem;
+	text-align: center;
 }

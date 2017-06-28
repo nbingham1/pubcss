@@ -41,6 +41,7 @@ img {
 
 code {
 	display: inline;
+	break-inside: avoid;
 	font-family: Courier, monospace;
 	text-align: left;
 	white-space: pre-wrap;
