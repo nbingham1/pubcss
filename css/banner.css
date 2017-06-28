@@ -16,6 +16,14 @@
 	margin: 0 0 0 0;
 }
 
+@media screen and (max-width: 540px) {
+	#banner {
+		height: 1.5rem;
+		line-height: 1.5rem;
+		font-size: 1.0rem;
+  }
+}
+
 .banner {
 	color: #FFFFFF;
 	text-decoration: none;
