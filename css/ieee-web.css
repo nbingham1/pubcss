@@ -2,8 +2,16 @@
 
 @charset "UTF-8";
 
-html {
-	font-size: 18pt;
+@media screen and (max-width: 540px) {
+	html {
+		font-size: 14pt;
+	}
+}
+
+@media screen and (min-width: 540px) {
+	html {
+		font-size: 18pt;
+	}
 }
 
 body {

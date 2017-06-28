@@ -1,6 +1,6 @@
 @charset "UTF-8";
 cite {
-	display: table;
+	display: block;
 	position: relative;
 	font-style: normal;
 	font-size: 0.8rem;
@@ -9,18 +9,19 @@ cite {
 	margin: 0 0 0.3rem 0;
 }
 
-div.cite-ref {
+.cite-txt {
 	display: table-cell;
+	text-indent: 0;
+	width: calc(100% - 3rem);
+	font-style: normal;
+	font-size: 0.8rem;
+}
+
+.cite-ref {
+	display: table-cell;
+	text-indent: 0;
 	width: 2.5rem;
 	font-style: normal;
 	font-size: 0.8rem;
 	text-align: center;
--webkit-text-size-adjust: 100%; 
-}
-
-div.cite-txt {
-	display: table-cell;
-	width: calc(100% - 3rem);
-	font-style: normal;
-	font-size: 0.8rem;
 }
