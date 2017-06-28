@@ -15,7 +15,7 @@ div.cite-ref {
 	font-style: normal;
 	font-size: 0.8rem;
 	text-align: center;
--webkit-text-size-adjust: none; 
+-webkit-text-size-adjust: 100%; 
 }
 
 div.cite-txt {
