@@ -51,7 +51,7 @@ code.block {
 	font-size: 0.8rem;
 	border: 1px solid;
 	page-break-inside: avoid;
-	max-width: calc(100% - 2.0rem);
+	max-width: calc(100% - 1.0rem);
 	padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 	counter-increment: code;
 	margin: 0.5rem 0 0.5rem 0;
