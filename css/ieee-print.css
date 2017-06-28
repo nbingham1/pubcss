@@ -172,7 +172,7 @@ h6:not(.counter-skip)::before {
 h1 {
 	font-size: "font-size-h1";
 	font-variant: small-caps;
-	margin: 0.2rem 0 0.2rem 0;
+	margin: 1.0rem 0 0.2rem 0;
 	text-align: center;
 }
 
