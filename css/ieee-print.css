@@ -52,7 +52,7 @@ code.block {
 	border: 1px solid;
 	page-break-inside: avoid;
 	max-width: calc(100% - 2.0rem);
-	padding: 0.5rem 1.0rem 0.5rem 1.0rem;
+	padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 	counter-increment: code;
 	margin: 0.5rem 0 0.5rem 0;
 }
