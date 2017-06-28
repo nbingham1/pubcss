@@ -280,6 +280,7 @@ small { font-size: 0.8rem; }
 }
 
 ul {
+	text-align: justify;
 	margin: 0 0 0.5rem 0;
 }
 
@@ -288,6 +289,7 @@ ul ul {
 }
 
 ol {
+	text-align: justify;
 	list-style: decimal outside none;
 	font-style: italic;
 	margin: 0 0 0.5rem 0;
