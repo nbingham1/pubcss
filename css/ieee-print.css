@@ -54,7 +54,7 @@ code.block {
 	max-width: calc(100% - 2.0rem);
 	padding: 0.5rem 1.0rem 0.5rem 1.0rem;
 	counter-increment: code;
-	margin: 1rem 0 1rem;
+	margin: 0.5rem 0 0.5rem 0;
 }
 
 figure {
@@ -62,7 +62,7 @@ figure {
 	page-break-inside: avoid;
 	max-width: 100%;
 	counter-increment: figure;
-	margin: 1.333rem 0 2.333rem;
+	margin: 0.5rem 0 0.5rem 0;
 }
 
 figcaption {
@@ -71,7 +71,7 @@ figcaption {
 	font: inherit;
 	font-size: 0.8rem;
 	font-weight: normal;
-	margin: 0 0 0.4rem; }
+	margin: 0 0 0.4rem 0; }
 
 figcaption::before {
 	content: "Fig. " counter(figure) ". "; }
