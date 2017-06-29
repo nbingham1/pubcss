@@ -57,6 +57,10 @@ code.block {
 	margin: 0.5rem 0 0.5rem 0;
 }
 
+code.block::first-line {
+	line-height: 0px;
+}
+
 figure {
 	display: block;
 	page-break-inside: avoid;
