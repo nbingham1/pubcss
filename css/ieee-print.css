@@ -44,21 +44,18 @@ code {
 	font-family: Courier, monospace;
 	text-align: left;
 	white-space: pre-wrap;
+	width: 100%;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
 }
 
-code.block {
+pre {
 	display: block;
 	font-size: 0.8rem;
-	border: 1px solid;
 	page-break-inside: avoid;
 	max-width: calc(100% - 1.0rem);
 	padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 	counter-increment: code;
-	margin: 0.5rem 0 0.5rem 0;
-}
-
-code.block::first-line {
-	line-height: 0px;
 }
 
 figure {

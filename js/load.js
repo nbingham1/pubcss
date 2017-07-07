@@ -152,6 +152,6 @@ formatLinks = function() {
 	});
 };
 
-window.onload = function() {
-	includeHTML().then(formatAnchors).then(formatLinks);
+loadPubCSS = function() {
+	return includeHTML().then(formatAnchors).then(formatLinks);
 }
