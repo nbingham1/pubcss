@@ -90,6 +90,7 @@ thead,tfoot { display: table-row-group; }
 
 th {
 	border-bottom: 1px solid #000;
+}
 
 th,
 td {
