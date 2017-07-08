@@ -54,7 +54,7 @@ pre {
 	font-size: 0.8rem;
 	page-break-inside: avoid;
 	max-width: calc(100% - 1.0rem);
-	padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+	padding: 0.25rem 0.25rem 0.25rem 0.25rem;
 	counter-increment: code;
 }
 
