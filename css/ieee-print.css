@@ -88,10 +88,12 @@ table {
 
 thead,tfoot { display: table-row-group; }
 
+th {
+	border-bottom: 1px solid #000;
+
 th,
 td {
 	border-spacing: 0px;	
-	border: 1px solid #000;
 	margin: 0 0 0 0;
 	padding: 0.333rem;
 	text-align: center; }
